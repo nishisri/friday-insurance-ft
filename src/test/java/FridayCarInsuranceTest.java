@@ -26,7 +26,7 @@ public class FridayCarInsuranceTest {
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/anubhavsrivastava/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://hello.friday.de/quote/selectPrecondition");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
