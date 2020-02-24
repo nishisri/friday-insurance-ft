@@ -10,6 +10,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -27,7 +28,10 @@ public class FridayCarInsuranceTest {
     @BeforeEach
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        options.addArguments("window-size=1200x600");
+        driver = new ChromeDriver(options);
         driver.get("https://hello.friday.de/quote/selectPrecondition");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
